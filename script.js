@@ -120,7 +120,11 @@ class TodoList {
   
         // Three vertical dots (more button)
   
-        
+        const dots = document.createElement('span');
+        dots.classList.add('dots');
+        listItem.appendChild(dots);
+        listContainer.appendChild(listItem);
+      });
   
       // Clear button
   
