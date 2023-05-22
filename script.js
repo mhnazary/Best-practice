@@ -128,7 +128,19 @@ class TodoList {
   
       // Clear button
   
-     
+      const clearButton = document.createElement('button');
+      clearButton.classList.add('clear-btn');
+      clearButton.textContent = 'Clear completed tasks';
+      clearButton.addEventListener('click', () => {
+        this.tasks = this.tasks.filter((task) => !task.completed);
+        this.saveTasksToStorage();
+        this.render();
+      });
+      const lastListItem = document.createElement('li');
+      lastListItem.classList.add('clear-btn-container');
+      lastListItem.appendChild(clearButton);
+      listContainer.appendChild(lastListItem);
+    }
   
     // Setter and getter for local storage
   
