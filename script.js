@@ -136,6 +136,12 @@ class TodoList {
   
     // Render
   
-    
+    render() {
+      this.displayToDoList();
+    }
+  }
+  
+  const todoList = new TodoList();
+  todoList.render();
   
   
