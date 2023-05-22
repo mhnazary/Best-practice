@@ -132,7 +132,18 @@ class TodoList {
   
     // Setter and getter for local storage
   
-    
+    saveTasksToStorage() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
+  
+    getTasksFromStorage() {
+      const tasksString = localStorage.getItem('tasks');
+      this.tasksString = tasksString;
+      if (tasksString) {
+        return JSON.parse(tasksString);
+      }
+      return [];
+    }
   
     // Render
   
